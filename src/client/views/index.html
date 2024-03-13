@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsAnalysis</title>
+</head>
+
+<body id="body">
+
+    <header>
+        <nav>
+            <div class="">
+                <h1>NewsAnalysis</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form id="form">
+                <label for="input">Put a URL or copy-paste the content of the news you want ot analyse!</label>
+                <input id="input" type="text" required />
+                <p id="warn"></p>
+                <input type="submit" id="btn" value="Submit" />
+            </form>
+        </section>
+
+        <section>
+            <div id="results">
+                <p class="result-text">Analysis-Summary: <span id="input-text"></span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>©2023 Codemukul</p>
+    </footer>
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
