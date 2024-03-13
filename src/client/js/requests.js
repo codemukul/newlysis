@@ -1,6 +1,5 @@
 const getAnalysis = async () => {
   const res = await fetch('http://localhost:8081/get_analysis');
-  console.log(res);
   const data = await res.text();
   console.log(data);
   Client.updateUI(data);
